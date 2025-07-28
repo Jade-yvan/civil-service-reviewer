@@ -1,1 +1,43 @@
-<!DOCTYPE html> <html> <head><title>Test</title></head> <body> <h1>Hello, your site is working!</h1> </body> </html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSE Reviewer - Aug 10, 2025</title>
+  <style>
+    body { font-family: sans-serif; padding: 1em; background: #f9f9f9; }
+    h1 { text-align: center; }
+    input, select, button {
+      font-size: 1em; padding: 0.5em; margin: 0.5em 0.3em;
+      border-radius: 5px; border: 1px solid #ccc;
+    }
+    button {
+      background: #0066cc; color: white; border: none;
+    }
+    button:hover { background: #004999; }
+    #progress-bar { width: 100%; background: #ddd; height: 12px; border-radius: 6px; overflow: hidden; margin: 1em 0; }
+    #progress { height: 100%; width: 0; background: #28a745; transition: width 0.4s; }
+    .question-card {
+      background: white; padding: 1em; margin: 1em 0;
+      border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>CSE Reviewer</h1>
+
+  <label>Examinee Name:
+    <input type="text" id="examineeName" placeholder="Your full name"/>
+  </label>
+  <button onclick="startQuiz()">Start</button>
+
+  <div id="controls" class="hidden">
+    <select id="categoryFilter" onchange="filterCategory()">
+      <option value="All">All Categories</option>
+      <option value="Verbal">Verbal</option>
+      <option value="Numerical">Numerical</option>
+      <option value="Logical">Logical</option>
+      <option value="General Info">General Info</option>
+    </select>
+    <button onclick="retryFailed()">Retry Failed Categories</button>
